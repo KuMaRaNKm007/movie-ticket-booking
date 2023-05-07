@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking</title>
+    <style>
+      /* add your CSS styling here */
+      /* for example, you can style the form and seats */
+      form {
+        margin: 0 auto;
+        width: 50%;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .seat {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #bbb;
+        margin: 5px;
+        border-radius: 5px;
+      }
+      .seat.available {
+        background-color: #8bc34a;
+        cursor: pointer;
+      }
+      .seat.booked {
+        background-color: #f44336;
+      }
+
+    </style>
+    <script>
+		function bookTicket() {
+			alert("Ticket successfully booked! enjoy with KMcinemas");
+			return true;
+		} 
+    </script>
+</head>
+<body>
+  	<h1>Movie Ticket Booking</h1>
+ 	<form onsubmit="return bookTicket()">
+   	<label for="movies">Select a movie:</label>
+   	 <select id="movies" name="movie">
+    	 <option value="movie1">PS-2</option>
+      	<option value="movie2">Tamilarasan</option>
+     	 <option value="movie3">Virupaksha</option>
+  	  </select>
+  	  <br><br>
+    	<div class="seat-map">
+	 <h2>Choose a Seat</h2>
+  	<table>
+  		<tr>
+ 		   <td></td>
+  		  <td>A</td>
+  	                  <td>B</td>
+     		  <td>C</td>
+    		  <td>D</td>
+     		  <td>E</td>
+     		  <td>F</td>
+     		  <td>G</td>
+     		   <td>H</td>
+    		   <td>I</td>
+    		   <td>J</td>
+      		   <td>K</td>
+    		   <td>L</td>
+   		</tr>
+    		<tr>
+    		  <td>1</td>
+     		 <td><input type="checkbox" name="seat" value="1A"></td>
+     		 <td><input type="checkbox" name="seat" value="1B"></td>
+     		 <td><input type="checkbox" name="seat" value="1C"></td>
+     		 <td><input type="checkbox" name="seat" value="1D"></td>
+    		 <td><input type="checkbox" name="seat" value="1E"></td>
+    		 <td><input type="checkbox" name="seat" value="1F"></td>
+     		 <td><input type="checkbox" name="seat" value="1G"></td>
+      		 <td><input type="checkbox" name="seat" value="1H"></td>
+     		 <td><input type="checkbox" name="seat" value="1I"></td>
+    		 <td><input type="checkbox" name="seat" value="1J"></td>
+      		<td><input type="checkbox" name="seat" value="1K"></td>
+      		<td><input type="checkbox" name="seat" value="1L"></td>
+   	               </tr>
+    		<tr>
+     		<td>2</td>
+      		 <td><input type="checkbox" name="seat" value="2A"></td>
+      		<td><input type="checkbox" name="seat" value="2B"></td>
+      		<td><input type="checkbox" name="seat" value="2C"></td>
+      		<td><input type="checkbox" name="seat" value="2D"></td>
+     		<td><input type="checkbox" name="seat" value="2E"></td>
+      		<td><input type="checkbox" name="seat" value="2F"></td>
+       		<td><input type="checkbox" name="seat" value="2G"></td>
+      		<td><input type="checkbox" name="seat" value="2H"></td>
+      		<td><input type="checkbox" name="seat" value="2I"></td>
+      		<td><input type="checkbox" name="seat" value="2J"></td>
+     		<td><input type="checkbox" name="seat" value="2K"></td>
+      		<td><input type="checkbox" name="seat" value="2L"></td>
+    		</tr>
+     		<tr>
+    		<td>3</td>
+      		<td><input type="checkbox" name="seat" value="3A"></td>
+     		 <td><input type="checkbox" name="seat" value="3B"></td>
+     		 <td><input type="checkbox" name="seat" value="3C"></td>
+      		<td><input type="checkbox" name="seat" value="3D"></td>
+      		<td><input type="checkbox" name="seat" value="3E"></td>
+      		<td><input type="checkbox" name="seat" value="3F"></td>
+      		 <td><input type="checkbox" name="seat" value="3G"></td>
+     		 <td><input type="checkbox" name="seat" value="3H"></td>
+      		<td><input type="checkbox" name="seat" value="3I"></td>
+      		<td><input type="checkbox" name="seat" value="3J"></td>
+      		<td><input type="checkbox" name="seat" value="3K"></td>
+      		<td><input type="checkbox" name="seat" value="3L"></td>
+    		</tr>
+  	</table>
+</div>
+    <label for="registration-id">Registration ID (ex: 23WP0001):</label>
+    <input type="text" id="registration-id" name="registration-id" pattern="[0-9]{2}[A-Za-z]{2}[0-9]{4}" required>
+    <br><br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" pattern="[A-Za-z]+" required>
+    <br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+    <br><br>
+    <label for="booking-date-time">Booking Date and Time:</label>
+    <input type="datetime-local" id="booking-date-time" name="booking-date-time" required>
+    <br><br>
+    <label for="card">Credit Card Number:</label>
+    <input type="text" id="card" name="card" required>
+    <br><br>
+    <label for="expiry">Expiration Date:</label>
+    <input type="month" id="expiry" name="expiry" required>
+    <br><br>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" required>
+    <br><br>
+    <label for="password">Password (minimum length of 8 with at least one lowercase letter, one uppercase letter, one digit, and one special character):</label>
+    <input type="password" id="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':\\\|,.<>/?]").{8,}$" required>
+    <br><br>
+    <input type="submit" value="Book Ticket">
+    <input type="button" value="Cancel" onclick="history.back()">
+  </form>
+	<a href="home.html" style="position:fixed; bottom:0; left:0;">Home</a>
+	<a href="contact.html" style="position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);">Contact</a>
+	<a href="showing_page.html" style="position:fixed; bottom:0; right:0;">Back</a>
+
+</body>
+</html>
